@@ -26,6 +26,7 @@ def main():
     wrongGuessesLeft = 6
     
     alphabet = set("abcdefghijklmnopqrstuvwxyz")
+    validLetters = alphabet.copy()
     
     if debug:
         print(solutionWord)
@@ -51,7 +52,10 @@ def main():
             elif guessedWord[i] in solLetters:
                 print(guessedWord[i] + "* ", end = "")
             else:
+                validLetters.remove(guessedWord[i])
                 print("_ ", end = "")
+        print()
+        print("Valid letters:", validLetters)
         print()
         
         wrongGuessesLeft -= 1       
