@@ -52,7 +52,8 @@ def main():
             elif guessedWord[i] in solLetters:
                 print(guessedWord[i] + "* ", end = "")
             else:
-                validLetters.remove(guessedWord[i])
+                if guessedWord[i] in validLetters:
+                    validLetters.remove(guessedWord[i])
                 print("_ ", end = "")
         print()
         print("Valid letters:", validLetters)
